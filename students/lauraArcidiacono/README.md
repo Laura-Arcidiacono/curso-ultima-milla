@@ -38,7 +38,7 @@
 
 > npm install webpack
 
-> npm installe webpack-dev-server
+> npm install webpack-dev-server
 
 > npm install webpack-cli
 
