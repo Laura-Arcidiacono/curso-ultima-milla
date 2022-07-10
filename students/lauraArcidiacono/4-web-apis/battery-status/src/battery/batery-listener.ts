@@ -1,26 +1,25 @@
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { BatteryManagerInfo } from './battery-model';
 
 export class BatteryListener {
 
-    private battery$: Observable<BatteryManagerInfo>; //The observable it's going to emit the level of the battery
+    private battery$: Subject<BatteryManagerInfo>; //The Subject it's going to emit the level of the battery
 
     constructor(){
-        this.battery$ = new Observable<BatteryManagerInfo>(subscriber => {
+        this.battery$ = new Subject<BatteryManagerInfo>()
             navigator.getBattery().then(battery => {
-                subscriber.next(battery); // The obserbavle take the battery status from the navigator.getBattery(), and emit it to the subscribers.
+                this.battery$.next(battery); // The Subject take the battery status from the navigator.getBattery(), and emit it to the subscribers.
 
-                const baterryEvent = () => subscriber.next(battery);
+                const baterryEvent = () => this.battery$.next(battery);
 
                 battery.onlevelchange = baterryEvent;
                 battery.onchargingchange = baterryEvent;
-                // battery.onlevelchange = () => console.log('Level has change');
-                // battery.onlevelchange = () => console.log('Level has change');
+                // battery.onchargingtimechange = baterryEvent;
+                // battery.ondischargingtimechange = baterryEvent;
             });
-        });
     }
 
-    getObservable() {
+    getObservable(): Observable<BatteryManagerInfo> {
         return this.battery$;
     }
 
