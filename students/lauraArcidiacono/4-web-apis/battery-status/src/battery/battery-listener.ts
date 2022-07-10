@@ -1,5 +1,6 @@
-import { Observable, Subject } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 import { BatteryManagerInfo } from './battery-model';
+import { IRender } from '../render/render.model';
 
 export class BatteryListener {
 
@@ -19,8 +20,8 @@ export class BatteryListener {
             });
     }
 
-    getObservable(): Observable<BatteryManagerInfo> {
-        return this.battery$;
+    renderSubscribe(render: IRender): Subscription {
+        return this.battery$.subscribe(battery => render.renderBattery(battery));
     }
 
 };
