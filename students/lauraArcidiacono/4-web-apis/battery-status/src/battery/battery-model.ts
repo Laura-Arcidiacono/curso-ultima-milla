@@ -8,8 +8,8 @@ export type BatteryManagerInfo = {
 // BatteryManager contains all properties from BatteryManagerInfo and
 // the private methods that will not be expoust
 export type BatteryManager = BatteryManagerInfo & {
-    onchargingchange: (event: Event) => void;
-    onchargingtimechange: (event: Event) => void;
-    ondischargingtimechange: (event: Event) => void;
-    onlevelchange: (event: Event) => void;
+    onchargingchange: ((event: Event) => void) | null;
+    onchargingtimechange: ((event: Event) => void) | null;
+    ondischargingtimechange: ((event: Event) => void) | null;
+    onlevelchange: ((event: Event) => void) | null;
 }
