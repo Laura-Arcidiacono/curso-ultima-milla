@@ -12,7 +12,7 @@
 
 > npm install --save-dev jest typescript ts-jest @types/jest
 
-> npm install jest-environment
+> npm install jest-environment-jsdom
 
 > npx ts-jest config:init
 
