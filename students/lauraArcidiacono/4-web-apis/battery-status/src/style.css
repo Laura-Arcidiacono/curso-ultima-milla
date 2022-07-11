@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-display: auto;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Calibri', 'Trebuchet MS', sans-serif;
+}
+
+header,
+footer {
+    width: 100%;
+    height: 4rem;
+    background-color: rgb(34, 83, 189);
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    padding:1rem
+}
+
+
+#batteryCard {
+    border: solid 0.2rem black;
+    border-radius: 2rem;
+    width: 30rem;
+    height: 84vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+}
+
+#batteryCard_top {
+    width: 100%;
+    height: 70%;
+    background-color: rgb(54, 203, 79);
+    border-radius: 2rem 2rem 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#top_positivePole {
+    width: 2rem;
+    height: 0.8rem;
+    border: solid 0.2rem white;
+    margin-top: 2rem;
+}
+
+#top_bodyBattery {
+    background-color: rgb(51, 172, 71);
+    width: 8rem;
+    height: 20rem;
+    border: solid 0.2rem white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#percentage {
+    background-color: #0b791d;
+    border: 0.2rem solid white;
+    margin: 0.2rem;
+}
+
+
+#batteryCard_icon {
+    background-color: #31d24c;
+    border: solid 0.2rem white;
+    border-radius: 24rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -5%;
+    margin-left: 70%;
+    font-size: 2rem;
+}
+
+#batteryCard_botom {
+    margin: 4rem;
+    text-align: center;
+}
+
+#botom_batteryLevel {
+   font-size: 3rem;
+}
+
+#botom_batteryStatus {
+    font-size: 3.5rem;
+    margin-top: 1rem;
+}
