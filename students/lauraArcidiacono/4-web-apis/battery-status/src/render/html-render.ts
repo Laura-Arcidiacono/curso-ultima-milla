@@ -1,26 +1,25 @@
 import { BatteryManagerInfo } from "../battery/battery-model";
 import { IRender } from "./render.model";
 
-export class HTMLRender implements IRender{
+export class HTMLRender implements IRender {
 
-   private CONTAINER_CLASS = 'battery_container';
-   private container: HTMLElement;
+    private CONTAINER_CLASS = 'battery__container';
+    private container: Element;
 
-   constructor(){
-      this.container = document.createElement('section');
-      this.container.classList.add(this.CONTAINER_CLASS);
-      document.body.appendChild(this.container);
-   }
+    constructor(){
+        this.container = document.createElement('section');
+        this.container.classList.add(this.CONTAINER_CLASS);
+        document.body.appendChild(this.container);
+    }
 
-   renderBattery(batteryManagerInfo: BatteryManagerInfo){
-      this.clearMethod();
-      const parrafo = document.createElement('p');
-      parrafo.textContent = batteryManagerInfo.charging.toString();
-      this.container.appendChild(parrafo);
-   };
+    renderBattery(b: BatteryManagerInfo){
+        this.clear();
+        const p = document.createElement('p');
+        p.textContent = b.charging.toString();
+        this.container.appendChild(p);
+    }
 
-   private clearMethod(){
-      this.container.innerHTML = '';
-   }
-
-};
+    private clear(){
+       this.container.innerHTML = '';
+    }
+}

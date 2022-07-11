@@ -25,9 +25,12 @@ export class BatteryCardRender implements IRender {
 
     renderBattery(batteryManagerInfo: BatteryManagerInfo){
         const currentLevel = batteryManagerInfo.level;
-        this.status.textContent = currentLevel < 0.6 ? `Battery Ok` : `Low Battery`;
-        this.level.textContent = `${(currentLevel * 100).toFixed()}%`;
-        this.batteryFraction.style.height = `${currentLevel * 100}%`;
-        this.chargerIcon!.textContent = (currentLevel * 100) >= 15 ? '⚡' :  '⚠️';
+        const multipliedCurrentLevel = currentLevel * 100;
+
+        this.status.textContent = currentLevel > 0.2 ? 'Battery Ok' : 'Low Battery';
+        this.status.style.color = currentLevel > 0.2 ? '#22c23d' : '#c2222c';
+        this.level.textContent = `${(multipliedCurrentLevel).toFixed()}%`;
+        this.batteryFraction.style.height = `${multipliedCurrentLevel}%`;
+        this.chargerIcon!.textContent = (multipliedCurrentLevel) >= 15 ? '⚡' :  '⚠️';
     };
 };

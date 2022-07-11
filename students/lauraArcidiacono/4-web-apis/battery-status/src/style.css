@@ -1,16 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-display: auto;
+}
+
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Calibri', 'Trebuchet MS', sans-serif;
 }
+
+header,
+footer {
+    width: 100%;
+    height: 4rem;
+    background-color: rgb(34, 83, 189);
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    padding:1rem
+}
+
+
 #batteryCard {
     border: solid 0.2rem black;
     border-radius: 2rem;
     width: 30rem;
-    height: 42rem;
+    height: 84vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 2rem;
 }
 
 #batteryCard_top {
@@ -36,11 +58,20 @@ body {
     width: 8rem;
     height: 20rem;
     border: solid 0.2rem white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#percentage {
+    background-color: #0b791d;
+    border: 0.2rem solid white;
+    margin: 0.2rem;
 }
 
 
 #batteryCard_icon {
-    background-color: rgb(51, 172, 71);
+    background-color: #31d24c;
     border: solid 0.2rem white;
     border-radius: 24rem;
     width: 3rem;
@@ -55,13 +86,15 @@ body {
 }
 
 #batteryCard_botom {
-    background-color: aqua;
+    margin: 4rem;
+    text-align: center;
 }
 
 #botom_batteryLevel {
-   background-color: aqua;
+   font-size: 3rem;
 }
 
 #botom_batteryStatus {
-    background-color: aqua;
+    font-size: 3.5rem;
+    margin-top: 1rem;
 }
