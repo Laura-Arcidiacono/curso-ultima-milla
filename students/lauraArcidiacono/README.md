@@ -18,6 +18,8 @@
 
 > npx tsc --init
 
+> npm install ts-node
+
 ##### Basic tsconfig.json
 
 ```js
